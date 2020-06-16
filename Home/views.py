@@ -21,7 +21,7 @@ def sending_email(request):
         #messages.add_message(request,messages.success,'We have Received your Email successfully...')
         susmsg = 'We have Received your Email Successfully, We will get back to you soon.'
 
-        return render(request,'index.html',{'susmsg':susmsg})
+        return render(request,'/',{'susmsg':susmsg})
     else:
         return render(request,'index.html')
 
