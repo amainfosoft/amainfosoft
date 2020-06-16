@@ -713,6 +713,7 @@
 
                         <div class="form">
                             <form action="{% url 'sending_email' %}" method="post" role="form" class="php-email-form">
+                                {% csrf_token %}
                                 <div class="form-row">
                                     <div class="form-group col-lg-6">
                                         <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
@@ -736,7 +737,7 @@
                                     <div class="error-message"></div>
                                     <div class="sent-message">Your message has been sent. Thank you!</div>
                                 </div>
-                                <div class="text-center"><button type="submit" title="Send Message">Send Message</button></div>
+                                <div class="text-center"><input type="submit" class="btn btn-primary" title="Send Message">Send Message</div>
                             </form>
                         </div>
                     </div>
