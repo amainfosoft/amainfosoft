@@ -16,7 +16,7 @@ def sending_email(request):
         message = request.POST['message']
 
         message = name + email + message
-        send_mail(subject,message,email,'amainfosoft@gmail.com',fail_silently=False,)
+        send_mail(subject,message,email,['amainfosoft@gmail.com'],fail_silently=False,)
         reply_msg = 'We have Received your Email Successfully ' + emoji.emojize(":smiling face:")
         messages.add_message(request,messages.success,reply_msg)
 
