@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.core.mail import send_mail
 from django.contrib import messages
 import emoji
@@ -23,7 +23,8 @@ def sending_email(request):
         msg = 'We have Received your Email Successfully, We will get back to you soon.'
         susmsg.append(msg)
 
-        return render(request,'index.html',{'susmsg':susmsg})
+        #return render(request,'index.html',{'susmsg':susmsg})
+        return redirect('index')
     else:
         return render(request,'index.html')
 
