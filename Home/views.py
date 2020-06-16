@@ -19,8 +19,9 @@ def sending_email(request):
         send_mail(subject,message,email,['amainfosoft@gmail.com'],fail_silently=False,)
         #reply_msg = 'We have Received your Email Successfully ' + emoji.emojize(":smiling face:")
         #messages.add_message(request,messages.success,'We have Received your Email successfully...')
+        message = 'We have Received your Email Successfully, We will get back to you soon.'
 
-        return render(request,'index.html')
+        return render(request,'index.html',{'message':message})
     else:
         return render(request,'index.html')
 
