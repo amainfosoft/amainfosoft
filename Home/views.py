@@ -15,10 +15,10 @@ def sending_email(request):
         subject = request.POST['subject']
         message = request.POST['message']
 
-        message = name + email + message
+        message = name +' '+ email+' ' + message
         send_mail(subject,message,email,['amainfosoft@gmail.com'],fail_silently=False,)
-        reply_msg = 'We have Received your Email Successfully ' + emoji.emojize(":smiling face:")
-        messages.add_message(request,messages.success,reply_msg)
+        #reply_msg = 'We have Received your Email Successfully ' + emoji.emojize(":smiling face:")
+        messages.add_message(request,messages.success,'We have Received your Email successfully...')
 
         return render(request,'index.html')
     else:
