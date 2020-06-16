@@ -21,11 +21,11 @@ def sending_email(request):
         send_mail(subject,message,email,['amainfosoft@gmail.com'],fail_silently=False,)
         #reply_msg = 'We have Received your Email Successfully ' + emoji.emojize(":smiling face:")
         #messages.add_message(request,messages.success,'We have Received your Email successfully...')
-        susmsg = 'We have Received your Email Successfully, We will get back to you soon.'
+        messages.add_message(request,messages.success,'We have Received your Email Successfully, We will get back to you soon.')
         #susmsg.append(msg)
 
         #return render(request,'index.html',{'susmsg':susmsg})
-        return redirect('index',{'susmsg':susmsg})
+        return redirect('index')
     else:
         return render(request,'index.html')
 
