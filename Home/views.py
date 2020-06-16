@@ -25,7 +25,7 @@ def sending_email(request):
         #susmsg.append(msg)
 
         #return render(request,'index.html',{'susmsg':susmsg})
-        return render(request,'index.html',{'susmsg':susmsg})
+        return redirect('index.html',{'susmsg':susmsg})
     else:
         return render(request,'index.html')
 
