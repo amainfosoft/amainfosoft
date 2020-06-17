@@ -80,16 +80,13 @@
     </header>
     <!-- #header -->
 
-    {% if messages %}
-    {% for message in messages %}
-  <div class="alert {{ message.tags }} alert-dismissible" role="alert">
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    {% if messages %} {% for message in messages %}
+    <div class="alert {{ message.tags }} alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
       <span aria-hidden="true">&times;</span>
-    </button>
-    {{ message }}
-  </div>
-{% endfor %}
-    {% endif %}
+    </button> {{ message }}
+    </div>
+    {% endfor %} {% endif %}
 
     <!-- ======= Intro Section ======= -->
     <section id="intro" class="clearfix">
@@ -526,7 +523,7 @@
 
         <!-- ======= Team Section ======= -->
 
-                <!--<section id="team">
+        <!--<section id="team">
                     <div class="container">
                         <div class="section-header">
                             <h3>Team</h3>
@@ -715,7 +712,7 @@
                         </div>
 
                         <div class="form">
-                            <form action="{% url 'sending_email' %}" method="POST" role="form" >
+                            <form action="" method="POST" role="form">
                                 {% csrf_token %}
                                 <div class="form-row">
                                     <div class="form-group col-lg-6">
@@ -735,7 +732,7 @@
                                     <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
                                     <div class="validate"></div>
                                 </div>
-                               <!-- <div class="mb-3">
+                                <!-- <div class="mb-3">
                                     <div class="loading">Loading</div>
                                     <div class="error-message"></div>
                                     <div class="sent-message">Your message has been sent. Thank you!</div>
